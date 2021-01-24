@@ -12,6 +12,9 @@ To use the detect-ci-trigger action in workflows, add a new job:
     outputs:
       triggered: ${{ steps.detect-trigger.outputs.trigger-found }}
     steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 2
     - uses: keewis/ci-trigger@v1
       id: detect-trigger
       with:

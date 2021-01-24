@@ -14,13 +14,6 @@ outputs:
 runs:
   using: "composite"
   steps:
-    - name: checkout the repository
-      run: |
-        echo "repo: $GITHUB_REPOSITORY"
-        echo "workspace: $GITHUB_WORKSPACE"
-        echo "current directory: $PWD"
-        ls -lA $GITHUB_WORKSPACE
-      shell: bash
     - name: detect trigger
       id: detect-trigger
       run: |
