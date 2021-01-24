@@ -2,8 +2,7 @@
 event_name="$1"
 keyword="$2"
 
-echo "::group::fetch a sufficient number of commits"
-echo "skipped"
+# echo "::group::fetch a sufficient number of commits"
 # git log -n 5 2>&1
 # if [[ "$event_name" == "pull_request" ]]; then
 #     ref=$(git log -1 --format='%H')
@@ -14,7 +13,7 @@ echo "skipped"
 #     echo "nothing to do."
 # fi
 # git log -n 5 2>&1
-echo "::endgroup::"
+# echo "::endgroup::"
 
 echo "::group::extracting the commit message"
 echo "event name: $event_name"
