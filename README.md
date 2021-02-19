@@ -15,7 +15,7 @@ To use the detect-ci-trigger action in workflows, add a new job:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 2
-    - uses: keewis/ci-trigger@v1
+    - uses: xarray-contrib/ci-trigger@v1
       id: detect-trigger
       with:
         keyword: "<keyword>"
