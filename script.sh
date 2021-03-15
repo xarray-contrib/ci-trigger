@@ -42,5 +42,5 @@ fi
 echo "keyword detected: $result"
 echo "::endgroup::"
 
-echo "::set-output name=COMMIT_MESSAGE::$(echo $commit_message | tr '"' '\"')"
+echo "::set-output name=COMMIT_MESSAGE::$(echo $commit_message | tr '"' '%22')"
 echo "::set-output name=CI_TRIGGERED::$result"
