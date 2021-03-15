@@ -42,8 +42,5 @@ fi
 echo "keyword detected: $result"
 echo "::endgroup::"
 
-escaped_message="$(echo $commit_message | sed 's/\"/\\"/g')"
-echo "commit message: '$commit_message'"
-echo "escaped message: '$escaped_message'"
-echo "::set-output name=COMMIT_MESSAGE::$escaped_message"
+echo "::set-output name=COMMIT_MESSAGE::$(echo $commit_message | sed 's/\"/\\"/g')"
 echo "::set-output name=CI_TRIGGERED::$result"
