@@ -42,5 +42,7 @@ fi
 echo "keyword detected: $result"
 echo "::endgroup::"
 
-echo "::set-output name=COMMIT_MESSAGE::$commit_message"
+escaped=$(echo -n $commit_message | python -c 'import sys; from urllib.parse import quote; print(quote(sys.stdin.read()))')
+
+echo "::set-output name=COMMIT_MESSAGE::$escaped"
 echo "::set-output name=CI_TRIGGERED::$result"
