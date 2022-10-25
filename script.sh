@@ -42,5 +42,5 @@ fi
 echo "keyword detected: $result"
 echo "::endgroup::"
 
-echo "::set-output name=COMMIT_MESSAGE::$(echo $commit_message | sed 's/\"/\\"/g')"
-echo "::set-output name=CI_TRIGGERED::$result"
+echo "COMMIT_MESSAGE=$(echo $commit_message | sed 's/\"/\\"/g')" >> $GITHUB_OUTPUT
+echo "CI_TRIGGERED=$result" >> $GITHUB_OUTPUT
