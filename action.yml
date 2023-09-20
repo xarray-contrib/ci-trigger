@@ -22,11 +22,13 @@ runs:
     - name: show detection result
       run: |
         echo "::group::final summary"
-        echo "commit message: ${{ steps.detect-trigger.outputs.COMMIT_MESSAGE }}"
+        echo "commit message: $COMMIT_MESSAGE"
         echo "trigger keyword: ${{ inputs.keyword }}"
         echo "trigger found: ${{ steps.detect-trigger.outputs.CI_TRIGGERED }}"
         echo "::endgroup::"
       shell: bash
+      env:
+        COMMIT_MESSAGE: "${{ steps.detect-trigger.outputs.COMMIT_MESSAGE }}"
 branding:
   color: 'orange'
   icon: 'git-commit'
